@@ -7,10 +7,30 @@
 23432 -> да
 */
 
-Console.WriteLine("Введите пятизначное число -> ");
+// 
 // string num = Console.ReadLine()??"";
-string num = "13321";
-void Polidrom(string num)
+// string num = "13321";
+string correctNumber(string messege) // проверка правильности написание согласно условию
+{
+    bool isCorrect = false;
+    int num = 0;
+    while(!isCorrect)
+    {
+        Console.WriteLine(messege);
+        string numStr = Console.ReadLine()??"";
+        if(int.TryParse(numStr, out num) && num > 9999 && num < 100000)
+        {
+            isCorrect = true;
+        }
+        else
+        {
+            Console.WriteLine("Ввели не корректное число");
+        }
+    }
+    return num.ToString();
+}
+
+void Polidrom(string num) // решение задачи
 {
     int lenght = num.Length;
     int lenghtEnd = lenght - 1;
@@ -30,5 +50,8 @@ void Polidrom(string num)
     if (count == lenPol) Console.WriteLine($"Число {num} являеться полидромом");
     else Console.WriteLine($"Число {num} не являеться полидромом");
 }
+
+
+string num = correctNumber("Введите пятизначное число -> ");
 
 Polidrom(num);
