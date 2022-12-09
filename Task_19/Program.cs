@@ -16,7 +16,7 @@ string correctNumber(string messege) // проверка правильност�
     int num = 0;
     while(!isCorrect)
     {
-        Console.WriteLine(messege);
+        Console.Write(messege);
         string numStr = Console.ReadLine()??"";
         if(int.TryParse(numStr, out num) && num > 9999 && num < 100000)
         {
@@ -47,8 +47,8 @@ void Polidrom(string num) // решение задачи
         } 
     }
     // Console.WriteLine(count);
-    if (count == lenPol) Console.WriteLine($"Число {num} являеться полидромом");
-    else Console.WriteLine($"Число {num} не являеться полидромом");
+    if (count == lenPol) Console.WriteLine($"Число {num} ЯВЛЯЕТЬСЯ полидромом");
+    else Console.WriteLine($"Число {num} НЕ ЯВЛЯЕТЬСЯ полидромом");
 }
 
 
